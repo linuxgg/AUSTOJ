@@ -1,11 +1,13 @@
-body{
+body {
     ont-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
     overflow-x: hidden;
 }
-h6{
+
+h6 {
     font-size: 2rem;
 }
-.bg-one{
+
+.bg-one {
     background: url('../images/login-bg.jpg') no-repeat, repeat fixed, fixed left 0, left top;
     background-size: cover;
     width: 100vw;
@@ -16,67 +18,80 @@ h6{
     position: relative;
     overflow-x: hidden;
 }
-.login-logo{
+
+.login-logo {
     font-size: 6rem;
     margin-top: 9%;
 }
-table{
+
+table {
     margin: 0 auto;
 }
-.code-input{
+
+.code-input {
     width: 100px;
     display: inline;
 }
-.code-img{
+
+.code-img {
     width: 90px;
     height: 35px;
     margin-left: 10px;
     border: none;
 }
-.code-inline{
+
+.code-inline {
     display: inline-block;
     padding-bottom: 20px;
     position: relative;
 }
-.input-group-addon{
-    background-color: rgba(255,255,255,0);
+
+.input-group-addon {
+    background-color: rgba(255, 255, 255, 0);
     color: gray;
     top: 0;
 }
-.form-control{
-background-color: rgba(255,255,255,0)
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0)
 }
-.vertical-center{
+
+.vertical-center {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.login-field{
+
+.login-field {
     width: 300px;
     margin: 0 auto;
     margin-top: 20px;
 }
-.register-field{
+
+.register-field {
     width: 400px;
     margin: 0 auto;
     margin-top: 20px;
 }
-.btn-primary{
-    background-color: rgba(255,255,255,.12);
+
+.btn-primary {
+    background-color: rgba(255, 255, 255, .12);
     width: 140px;
 }
 
-a{
+a {
     cursor: pointer;
 }
-.small-home{
+
+.small-home {
     position: fixed;
     top: 20px;
     right: 26px;
     z-index: 100;
 }
-.small-home a{
+
+.small-home a {
     height: 45px;
     width: 45px;
     display: block;
@@ -86,12 +101,14 @@ a{
     color: #fff;
     border-radius: 50%;
 }
-.small-home a:hover{
+
+.small-home a:hover {
     width: 50px;
     height: 50px;
     color: black;
 }
-.small-home a span{
+
+.small-home a span {
     padding-bottom: 7px;
 }
 
@@ -133,6 +150,7 @@ a{
     -webkit-animation-name: fadeInDown;
     animation-name: fadeInDown
 }
+
 @-webkit-keyframes fadeInUp {
     0% {
         opacity: 0;
