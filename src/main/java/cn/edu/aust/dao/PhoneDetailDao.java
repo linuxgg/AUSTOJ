@@ -7,6 +7,7 @@ import cn.edu.aust.util.PageUtil;
 import org.apache.log4j.Logger;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
+import com.alibaba.fastjson.JSON;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -30,8 +31,10 @@ public class PhoneDetailDao {
         return sqlSessionTemplate.selectList("phonedetailMapper.showallphonedetails", pageUtil);
     }
 
-    public String addPhones(PhoneDetail phoneDetail) {
-        return sqlSessionTemplate.insert("phonedetailMapper.showallphonedetails", phoneDetail) + "";
+    public boolean addPhones(PhoneDetail phoneDetail) {
+        int k = sqlSessionTemplate.insert("phonedetailMapper.add_phones", phoneDetail);
+        return k > 0;
+
     }
 
 

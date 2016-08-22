@@ -52,10 +52,8 @@ public class PhoneDetailController {
     @RequestMapping(value = "/addPhones", method = RequestMethod.POST, consumes = "application/json")
     public
     @ResponseBody
-    String addPhones(@RequestBody PhoneDetail phoneDetail) throws Exception {
-        logger.debug("start in PhoneDetailController showallphonedetails");
-        return "adfasdfasdfad";
-//        return phoneDetailService.addPhones(phoneDetail);
+    Object addPhones(@RequestBody PhoneDetail phoneDetail) throws Exception {
+        return phoneDetailService.addPhones(phoneDetail);
     }
 
 

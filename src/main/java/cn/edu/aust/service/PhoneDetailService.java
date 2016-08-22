@@ -39,7 +39,7 @@ public class PhoneDetailService {
      * @param phoneDetail
      * @return
      */
-    public String addPhones(PhoneDetail phoneDetail) throws Exception {
+    public Object addPhones(PhoneDetail phoneDetail) throws Exception {
         return phonedetailDao.addPhones(phoneDetail);
     }
 
