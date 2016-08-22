@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>排名</title>
+    <title>Phones</title>
     <link rel="shortcut icon" href="${path}/static/images/favicon.ico">
     <link href="${path}/static/css/bootstrap.min.css" rel="stylesheet">
     <link href="${path}/static/css/flat-ui.min.css" rel="stylesheet">
@@ -21,29 +21,26 @@
 <!--通知栏结束-->
 <!--主体开始-->
 
-<div class="col-md-9">
+<div class="col-md-12">
     <!--主面板-->
-    <section class="animated fadeInLeft">
-        <p class="page-text" style="text-indent: 2em;">
-            Show the details of phones
-        </p>
-        <h4 class="text-center">排名列表</h4>
-        <table class="table-bordered text-center" width="90%" data-toggle="table" id="phonedetail-table">
-            <thead>
-            <tr>
-                <th class="col-xs-1" data-sortable="true" data-field="id" data-align="center">ID</th>
-                <th class="col-xs-5" data-field="model">model</th>
-                <th class="col-xs-3" data-field="brand">brand</th>
-                <th class="col-xs-1" data-field="imei" data-align="center">imei</th>
-                <th class="col-xs-2" data-field="uuid" data-align="center">uuid</th>
-            </tr>
-            </thead>
-            <tbody>
 
-            </tbody>
-        </table>
+    <h4 class="text-center"> Show the details of phones</h4>
+    <table class="table-bordered text-center" width="90%" data-toggle="table" id="phonedetail-table">
+        <thead>
+        <tr>
+            <th class="col-xs-1" data-sortable="true" data-field="id" data-align="center">ID</th>
+            <th class="col-xs-5" data-field="model">model</th>
+            <th class="col-xs-3" data-field="brand">brand</th>
+            <th class="col-xs-1" data-field="imei" data-align="center">imei</th>
+            <th class="col-xs-2" data-field="uuid" data-align="center">uuid</th>
+        </tr>
+        </thead>
+        <tbody>
 
-    </section>
+        </tbody>
+    </table>
+
+
 </div>
 
 <!--主体结束-->
