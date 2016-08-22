@@ -45,9 +45,9 @@ public class MenuController {
         return "rank";
     }
 
-    @RequestMapping(value = "/phonedetail", method = RequestMethod.GET)
+    @RequestMapping(value = "/phones", method = RequestMethod.GET)
     public String toPhoneDetail() {
-        return "phonedetail";
+        return "phones";
     }
 
 
