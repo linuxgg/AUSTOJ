@@ -20,6 +20,10 @@
     </div>
 </header>
 <!--头部结束-->
+
+
+<p><a role="button" class="btn btn-primary" href="/phonedetail">phone_details</a></p>
+
 <div class="indexpage">
     <!--one page start-->
     <div class="bg-one">
@@ -102,6 +106,7 @@
         </div>
     </div>
 </div>
+
 <!--two page end-->
 <!--three page start-->
 <div class="bg-three">

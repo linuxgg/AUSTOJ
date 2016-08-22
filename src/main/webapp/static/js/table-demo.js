@@ -48,6 +48,25 @@ function setTable(obj,url) {
         icons: {refresh: "glyphicon-repeat", columns: "glyphicon-list"},
         uniqueId: "id"
     });
+//排名请求
+$("#phonedetail-table").bootstrapTable({
+    url: "/phone/phonedetails",//这里配置请求链接
+    method: 'post',
+    cache: true,					   //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+    pagination: true,				   //是否显示分页（*）
+    /*  queryParams: queryParams,//传递参数（*）*/
+    sidePagination: "server",		   //分页方式：client客户端分页，server服务端分页（*）
+    search: !0,
+    striped: true,
+    showRefresh: !0,
+    pageNumber: 1,					   //初始化加载第一页，默认第一页
+    pageSize: 20,
+    pageList: [20, 30, 50, 100],
+    showColumns: !0,
+    iconSize: "outline",
+    icons: {refresh: "glyphicon-repeat", columns: "glyphicon-list"},
+    uniqueId: "id"
+});
 
     //提交请求
     $("#submit-table").bootstrapTable({

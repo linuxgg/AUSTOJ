@@ -15,19 +15,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class IndexController {
     /**
      * 前往主页
+     *
      * @return
      */
-    @RequestMapping(value = "/index",method = RequestMethod.GET)
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String toIndex() throws MyException {
         return "index";
     }
+
     /**
      * 前往注册页面
      */
-    @RequestMapping(value = "/register",method = RequestMethod.GET)
-    public String toRegister(String email, Model model){
-        if (StringUtils.hasText(email)){
-            model.addAttribute("email",email);
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String toRegister(String email, Model model) {
+        if (StringUtils.hasText(email)) {
+            model.addAttribute("email", email);
         }
         return "register";
     }

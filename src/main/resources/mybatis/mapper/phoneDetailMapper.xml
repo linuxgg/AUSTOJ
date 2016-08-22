@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="phonedetailMapper">
+    <!--启用二级缓存-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+
+    <select id="showallphonedetails" parameterType="cn.edu.aust.entity.PhoneDetail"
+            resultType="cn.edu.aust.entity.PhoneDetail">
+
+--        select * from phonedetails
+SELECT p.id,p.model,p.brand,p.imei,p.uuid
+from phonedetails p
+ORDER BY p.id
+    </select>
+
+</mapper>

@@ -13,32 +13,41 @@ public class MenuController {
 
     /**
      * 前往起步页面
+     *
      * @return
      */
-    @RequestMapping(value = "/start",method = RequestMethod.GET)
-    public String toStart(){
+    @RequestMapping(value = "/start", method = RequestMethod.GET)
+    public String toStart() {
         return "start";
     }
+
     /**
      * 前往训练页面
      */
-    @RequestMapping(value = "/practice",method = RequestMethod.GET)
-    public String toPractice(){
+    @RequestMapping(value = "/practice", method = RequestMethod.GET)
+    public String toPractice() {
         return "practice";
     }
+
     /**
      * 前往进阶页面
      */
-    @RequestMapping(value = "/master",method = RequestMethod.GET)
-    public String toMaster(){
+    @RequestMapping(value = "/master", method = RequestMethod.GET)
+    public String toMaster() {
         return "master";
     }
+
     /**
      * 前往排名页面
      */
-    @RequestMapping(value = "/rank",method = RequestMethod.GET)
-    public String toRank(){
+    @RequestMapping(value = "/rank", method = RequestMethod.GET)
+    public String toRank() {
         return "rank";
+    }
+
+    @RequestMapping(value = "/phonedetail", method = RequestMethod.GET)
+    public String toPhoneDetail() {
+        return "phonedetail";
     }
 
 
