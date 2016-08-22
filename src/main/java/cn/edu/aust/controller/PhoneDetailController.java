@@ -35,20 +35,6 @@ public class PhoneDetailController {
      * @param pageUtil
      * @return
      */
-//    @RequestMapping(value = "/phonedetails", method = RequestMethod.POST)
-//    public
-//    @ResponseBody
-//    Map<String, Object> showallphonedetails(@RequestBody PageUtil pageUtil) throws Exception {
-//        logger.debug("start in PhoneDetailController showallphonedetails");
-//        Map<String, Object> maps = new HashMap<>();
-//        PageHelper.startPage(pageUtil.getOffset() / pageUtil.getLimit() + 1, pageUtil.getLimit());
-////        List<PhoneDetail> lists =new ArrayList<>();
-//        List<PhoneDetail> lists = phoneDetailService.showallphonedetails(pageUtil);
-//        PageInfo<PhoneDetail> info = new PageInfo<>(lists);
-//        maps.put("total", info.getTotal());
-//        maps.put("rows", lists);
-//        return maps;
-//    }
     @RequestMapping(value = "/phonedetails", method = RequestMethod.POST)
     public
     @ResponseBody
@@ -56,12 +42,20 @@ public class PhoneDetailController {
         logger.debug("start in PhoneDetailController showallphonedetails");
         Map<String, Object> maps = new HashMap<>();
         PageHelper.startPage(pageUtil.getOffset() / pageUtil.getLimit() + 1, pageUtil.getLimit());
-//        List<PhoneDetail> lists =new ArrayList<>();
         List<PhoneDetail> lists = phoneDetailService.showallphonedetails(pageUtil);
         PageInfo<PhoneDetail> info = new PageInfo<>(lists);
         maps.put("total", info.getTotal());
         maps.put("rows", lists);
         return maps;
+    }
+
+    @RequestMapping(value = "/addPhones", method = RequestMethod.POST, consumes = "application/json")
+    public
+    @ResponseBody
+    String addPhones(@RequestBody PhoneDetail phoneDetail) throws Exception {
+        logger.debug("start in PhoneDetailController showallphonedetails");
+        return "adfasdfasdfad";
+//        return phoneDetailService.addPhones(phoneDetail);
     }
 
 

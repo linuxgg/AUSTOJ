@@ -6,11 +6,13 @@
 
     <select id="showallphonedetails" parameterType="cn.edu.aust.entity.PhoneDetail"
             resultType="cn.edu.aust.entity.PhoneDetail">
-
---        select * from phonedetails
-SELECT p.id,p.model,p.brand,p.imei,p.uuid
-from phonedetails p
-ORDER BY p.id
+        SELECT * from phonedetails p
     </select>
+
+
+    <insert id="add_phones">
+        INSERT phonedetails
+
+    </insert>
 
 </mapper>

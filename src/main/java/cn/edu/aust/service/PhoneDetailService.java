@@ -7,8 +7,12 @@ import cn.edu.aust.entity.User;
 import cn.edu.aust.util.PageUtil;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -31,11 +35,12 @@ public class PhoneDetailService {
         return phonedetailDao.showallphonedetails(pageUtil);
     }
 
-//    public List<User> showallphonedetailsP(PageUtil pageUtil) {
-//        logger.debug("start in PhoneDetailService showallphonedetails");
-////        return phonedetailDao.showallphonedetails(pageUtil);
-//        return phonedetailDao.findUserRank(pageUtil);
-//    }
-
+    /**
+     * @param phoneDetail
+     * @return
+     */
+    public String addPhones(PhoneDetail phoneDetail) throws Exception {
+        return phonedetailDao.addPhones(phoneDetail);
+    }
 
 }

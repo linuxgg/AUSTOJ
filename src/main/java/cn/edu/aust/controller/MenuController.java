@@ -1,8 +1,13 @@
 package cn.edu.aust.controller;
 
+import cn.edu.aust.entity.PhoneDetail;
+import cn.edu.aust.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.validation.Valid;
 
 /**
  * 各个页面之间get跳转的控制器
@@ -50,5 +55,8 @@ public class MenuController {
         return "phones";
     }
 
-
+    @RequestMapping(value = "/addPhones", method = RequestMethod.POST, produces = "application/json")
+    public String addPhones() {
+        return "addPhones";
+    }
 }

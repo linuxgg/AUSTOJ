@@ -27,13 +27,12 @@ public class PhoneDetailDao {
      * @return
      */
     public List<PhoneDetail> showallphonedetails(PageUtil pageUtil) {
-        logger.debug("start in PhoneDetailDao showallphonedetails");
         return sqlSessionTemplate.selectList("phonedetailMapper.showallphonedetails", pageUtil);
     }
 
-
-    public List<User> findUserRank(PageUtil pageUtil) {
-        return sqlSessionTemplate.selectList("userMapper.findUserRank", pageUtil);
+    public String addPhones(PhoneDetail phoneDetail) {
+        return sqlSessionTemplate.insert("phonedetailMapper.showallphonedetails", phoneDetail) + "";
     }
+
 
 }
