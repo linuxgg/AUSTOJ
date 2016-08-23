@@ -41,8 +41,8 @@ function setTable(obj,url) {
         striped: true,
         showRefresh: !0,
         pageNumber:1,					   //初始化加载第一页，默认第一页
-        pageSize:18,
-        pageList:[20, 30, 50, 100],
+        pageSize: 10,
+        pageList: [10, 20, 30, 50, 100],
         showColumns: !0,
         iconSize: "outline",
         icons: {refresh: "glyphicon-repeat", columns: "glyphicon-list"},
@@ -60,7 +60,7 @@ $("#phonedetail-table").bootstrapTable({
     striped: true,
     showRefresh: !0,
     pageNumber: 1,					   //初始化加载第一页，默认第一页
-    pageSize: 20,
+    pageSize: 10,
     pageList: [20, 30, 50, 100],
     showColumns: !0,
     iconSize: "outline",

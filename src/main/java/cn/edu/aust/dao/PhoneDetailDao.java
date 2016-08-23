@@ -33,9 +33,12 @@ public class PhoneDetailDao {
     }
 
     public Object addPhones(PhoneDetail phoneDetail) {
-        int k = sqlSessionTemplate.insert("phonedetailMapper.add_phones", phoneDetail);
-        return k > 0;
-//        return phoneDetail;
+        if (phoneDetail == null) {
+            return false;
+        } else {
+            int k = sqlSessionTemplate.insert("phonedetailMapper.add_phones", phoneDetail);
+            return k > 0;
+        }
     }
 
 
