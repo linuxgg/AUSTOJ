@@ -11,6 +11,7 @@ import com.alibaba.fastjson.JSON;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 用户和数据库交互的DAO
@@ -31,10 +32,10 @@ public class PhoneDetailDao {
         return sqlSessionTemplate.selectList("phonedetailMapper.showallphonedetails", pageUtil);
     }
 
-    public boolean addPhones(PhoneDetail phoneDetail) {
+    public Object addPhones(PhoneDetail phoneDetail) {
         int k = sqlSessionTemplate.insert("phonedetailMapper.add_phones", phoneDetail);
         return k > 0;
-
+//        return phoneDetail;
     }
 
 

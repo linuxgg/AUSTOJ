@@ -15,9 +15,6 @@
         (model,brand,imei,uuid)
         VALUES
         (#{model},#{brand},#{imei},#{uuid})
+    </insert>
 
-    </insert>
-    <insert id="addUser" parameterType="cn.edu.aust.entity.User">
-        INSERT user (username,password,email) VALUE (#{username},#{password},#{email})
-    </insert>
 </mapper>

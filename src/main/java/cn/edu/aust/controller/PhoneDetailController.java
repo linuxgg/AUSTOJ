@@ -49,7 +49,8 @@ public class PhoneDetailController {
         return maps;
     }
 
-    @RequestMapping(value = "/addPhones", method = RequestMethod.POST, consumes = "application/json")
+    @RequestMapping(value = "/addPhones", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+//    @RequestMapping(value = "/addPhones", method = RequestMethod.POST)
     public
     @ResponseBody
     Object addPhones(@RequestBody PhoneDetail phoneDetail) throws Exception {
