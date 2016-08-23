@@ -1,6 +1,7 @@
 package cn.edu.aust.service;
 
 import cn.edu.aust.dao.PhoneDetailDao;
+import cn.edu.aust.entity.HttpResult;
 import cn.edu.aust.entity.PhoneDetail;
 import cn.edu.aust.entity.Problem;
 import cn.edu.aust.entity.User;
@@ -39,7 +40,7 @@ public class PhoneDetailService {
      * @param phoneDetail
      * @return
      */
-    public Object addPhones(PhoneDetail phoneDetail) throws Exception {
+    public HttpResult addPhones(PhoneDetail phoneDetail) throws Exception {
         return phonedetailDao.addPhones(phoneDetail);
     }
 

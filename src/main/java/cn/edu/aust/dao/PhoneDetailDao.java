@@ -1,5 +1,6 @@
 package cn.edu.aust.dao;
 
+import cn.edu.aust.entity.HttpResult;
 import cn.edu.aust.entity.PhoneDetail;
 import cn.edu.aust.entity.Problem;
 import cn.edu.aust.entity.User;
@@ -32,12 +33,25 @@ public class PhoneDetailDao {
         return sqlSessionTemplate.selectList("phonedetailMapper.showallphonedetails", pageUtil);
     }
 
-    public Object addPhones(PhoneDetail phoneDetail) {
+    public HttpResult addPhones(PhoneDetail phoneDetail) {
         if (phoneDetail == null) {
-            return false;
+            return new HttpResult(-1, "phoneDetail is null");
         } else {
-            int k = sqlSessionTemplate.insert("phonedetailMapper.add_phones", phoneDetail);
-            return k > 0;
+            int k = -1;
+            String tempReason = "";
+            try {
+                k = sqlSessionTemplate.insert("phonedetailMapper.add_phones", phoneDetail);
+
+                if (k != 0) {
+                    tempReason = "insert successfully.";
+                } else {
+                    tempReason = "insert fail";
+                }
+            } catch (Exception e) {
+                tempReason = e.getMessage();
+            }
+
+            return new HttpResult(k, tempReason);
         }
     }
 
