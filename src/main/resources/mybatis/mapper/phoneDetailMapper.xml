@@ -12,9 +12,11 @@
 
     <insert id="add_phones" parameterType="cn.edu.aust.entity.PhoneDetail">
         INSERT phonedetails
-        (model,brand,imei,uuid)
+        ( model, brand,os, imei, uuid, zoomsuppported, videostabilization, focusmode, flashmode, previewsize, details)
         VALUES
-        (#{model},#{brand},#{imei},#{uuid})
+        (#{model},#{brand},#{os},#{imei},#{uuid},#{zoomsuppported},#{videostabilization},#{focusmode},#{flashmode},#{previewsize},#{details})
+
+
     </insert>
 
 </mapper>

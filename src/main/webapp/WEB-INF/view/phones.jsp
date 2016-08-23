@@ -21,7 +21,7 @@
 <!--通知栏结束-->
 <!--主体开始-->
 
-<div class="col-md-12">
+<div class="col-xs-12">
     <!--主面板-->
 
     <h4 class="text-center"> Show the details of phones</h4>
@@ -29,10 +29,18 @@
         <thead>
         <tr>
             <th class="col-xs-1" data-sortable="true" data-field="id" data-align="center">ID</th>
-            <th class="col-xs-5" data-field="model">model</th>
-            <th class="col-xs-3" data-field="brand">brand</th>
-            <th class="col-xs-1" data-field="imei" data-align="center">imei</th>
+            <th class="col-xs-2" data-field="brand">brand</th>
+            <th class="col-xs-2" data-field="model">model</th>
+            <th class="col-xs-2" data-field="os">os</th>
+            <th class="col-xs-2" data-field="imei" data-align="center">imei</th>
             <th class="col-xs-2" data-field="uuid" data-align="center">uuid</th>
+            <th class="col-xs-2" data-field="zoomsuppported" data-align="center">zoomsuppported</th>
+            <th class="col-xs-2" data-field="videostabilization" data-align="center">videostabilization</th>
+            <th class="col-xs-2" data-field="focusmode" data-align="center">focusmode</th>
+            <th class="col-xs-2" data-field="flashmode" data-align="center">flashmode</th>
+            <th class="col-xs-2" data-field="previewsize" data-align="center">previewsize</th>
+            <th class="col-xs-2" data-field="details" data-align="center">details</th>
+            <%--<th class="col-xs-2" data-field="details" data-align="center">details</th>--%>
         </tr>
         </thead>
         <tbody>

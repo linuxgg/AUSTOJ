@@ -564,12 +564,21 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES = @OLD_SQL_NOTES */;
 
 
+DROP TABLE IF EXISTS phonedetails;
+
 CREATE TABLE `phonedetails` (
-  `id`    INT(11)      NOT NULL AUTO_INCREMENT,
-  `model` VARCHAR(255)          DEFAULT 'NONE_MODEL',
-  `brand` VARCHAR(255)          DEFAULT 'NONE_BRAND',
-  `imei`  VARCHAR(255) NOT NULL,
-  `uuid`  VARCHAR(255) NOT NULL,
+  `id`                 INT(11)      NOT NULL AUTO_INCREMENT,
+  `model`              VARCHAR(255)          DEFAULT 'NONE_MODEL',
+  `brand`              VARCHAR(255)          DEFAULT 'NONE_BRAND',
+  `imei`               VARCHAR(255) NOT NULL,
+  `os`                 VARCHAR(500) NOT NULL,
+  `uuid`               VARCHAR(255) NOT NULL,
+  `zoomsuppported`     BOOLEAN,
+  `videostabilization` BOOLEAN,
+  `focusmode`          VARCHAR(32),
+  `flashmode`          VARCHAR(32),
+  `previewsize`        VARCHAR(1024),
+  `details`            TEXT(65530),
   PRIMARY KEY (`id`)
 )
   ENGINE = InnoDB
@@ -578,11 +587,16 @@ CREATE TABLE `phonedetails` (
 
 
 LOCK TABLES `phonedetails` WRITE;
-INSERT INTO `phonedetails` (`id`, `model`, `brand`, `imei`, `uuid`)
+INSERT INTO `phonedetails` (`id`, `model`, `brand`, `os`, `imei`, `uuid`, `zoomsuppported`, `videostabilization`, `focusmode`, `flashmode`, `previewsize`, `details`)
 VALUES
-  (NULL, 'model1', 'brand1', 'imei_001', 'this is uuid'),
-  (NULL, 'model2', 'brand2', 'imei_002', 'this is uuid'),
-  (NULL, 'model3', 'brand3', 'imei_003', 'this is uuid'),
-  (NULL, 'model4', 'brand4', 'imei_004', 'this is uuid'),
-  (NULL, 'model5', 'brand5', 'imei_005', 'this is uuid');
+  (NULL, 'model1', 'brand1', 'os1', 'imei_001', 'this is uuid', FALSE, TRUE, "focusmode", "flashmode", "[100]",
+   "this is a long long string"),
+  (NULL, 'model2', 'brand2', 'os1', 'imei_002', 'this is uuid', FALSE, TRUE, "focusmode", "flashmode", "[100]",
+   "this is a long long string"),
+  (NULL, 'model3', 'brand3', 'os1', 'imei_003', 'this is uuid', FALSE, TRUE, "focusmode", "flashmode", "[100]",
+   "this is a long long string"),
+  (NULL, 'model4', 'brand4', 'os1', 'imei_004', 'this is uuid', FALSE, TRUE, "focusmode", "flashmode", "[100]",
+   "this is a long long string"),
+  (NULL, 'model5', 'brand5', 'os1', 'imei_005', 'this is uuid', FALSE, TRUE, "focusmode", "flashmode", "[100]",
+   "this is a long long string");
 UNLOCK TABLES;
