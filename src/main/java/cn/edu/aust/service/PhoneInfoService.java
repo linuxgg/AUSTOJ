@@ -37,6 +37,7 @@ public class PhoneInfoService {
      * @return
      */
     public List<Phone> showallphonesummary(PageUtil pageUtil) {
+        logger.debug("--------service-----------  " + pageUtil.toString());
         return phoneDao.showallphonesummary(pageUtil);
     }
 

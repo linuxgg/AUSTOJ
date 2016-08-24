@@ -30,7 +30,14 @@
         <if test="search != null">
             and (p.model LIKE #{search} or p.brand LIKE #{search} )
         </if>
-        ORDER BY p.id ${order}
+        <if test="sortName == null">
+            ORDER BY p.id ${order}
+        </if>
+        <if test="sortName != null">
+            ORDER BY ${sortName} ${order}
+        </if>
+
+
     </select>
 
     <!--查询详细信息-->

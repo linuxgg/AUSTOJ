@@ -12,9 +12,6 @@ setTable($("#phonedetail-table"), "/phone/phonedetails");
 setTable($("#phonesummary-table"), "/phone/phonesummary");
 
 
-
-
-
 //获取指定目录下的题目
 var cateid = $("#cateid").val();
 setTable($("#cate-table"), "/problem/findCateProblem/" + cateid);
@@ -76,10 +73,6 @@ function addlinktomodel(value, row, index) {
 }
 
 
-
-
-
-
 //排名请求
 $("#rank-table").bootstrapTable({
     url: "/user/userRank",//这里配置请求链接
@@ -108,7 +101,8 @@ $("#submit-table").bootstrapTable({
     cache: true,					   //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
     pagination: true,				   //是否显示分页（*）
     queryParams: queryParams,//传递参数（*）
-    sidePagination: "server",		   //分页方式：client客户端分页，server服务端分页（*）
+    //sidePagination: "client",		   //分页方式：client客户端分页
+    sidePagination: "server",		   //分页方式： server服务端分页（*）
     search: !0,
     striped: true,
     showRefresh: !0,
@@ -118,16 +112,19 @@ $("#submit-table").bootstrapTable({
     showColumns: !0,
     iconSize: "outline",
     icons: {refresh: "glyphicon-repeat", columns: "glyphicon-list"},
-    uniqueId: "id"
+    uniqueId: "id",
+
+
 });
 
 
+//左边是从PageUtil来，右面是从bootstrap来
 function queryParams(params) {
     return {
         limit: params.limit,
         offset: params.offset,
         order: params.order,
-        sortName: params.sortName,
+        sortName: params.sort,
         search: params.search
     };
 }

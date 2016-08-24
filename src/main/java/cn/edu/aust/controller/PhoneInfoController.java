@@ -38,7 +38,7 @@ public class PhoneInfoController {
     Map<String, Object> showallphonedetailsP(@RequestBody PageUtil pageUtil) throws Exception {
         Map<String, Object> maps = new HashMap<>();
         PageHelper.startPage(pageUtil.getOffset() / pageUtil.getLimit() + 1, pageUtil.getLimit());
-        List<Phone> lists = phoneInfoService.showallphonesummary(pageUtil);
+        List<Phone> lists = phoneInfoService.showallphonedetails(pageUtil);
         PageInfo<Phone> info = new PageInfo<>(lists);
         maps.put("total", info.getTotal());
         maps.put("rows", lists);
@@ -55,6 +55,7 @@ public class PhoneInfoController {
     public
     @ResponseBody
     Map<String, Object> showallphonesummary(@RequestBody PageUtil pageUtil) throws Exception {
+        logger.debug("--------controller-----------  " + pageUtil.toString());
         Map<String, Object> maps = new HashMap<>();
         PageHelper.startPage(pageUtil.getOffset() / pageUtil.getLimit() + 1, pageUtil.getLimit());
         List<Phone> lists = phoneInfoService.showallphonesummary(pageUtil);

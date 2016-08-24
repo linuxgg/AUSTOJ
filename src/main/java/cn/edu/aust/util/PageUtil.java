@@ -23,10 +23,12 @@ public class PageUtil {
 
     private int limit = 20;
     private int offset = 1;
-    private String order = "asc";
-    private String ordername;
+    //    private String order = "asc";
+    private String order;
+    private String sortName;
     private String search;
     private int stage = 0;//对应的阶段,作用于目录时,则为对应的目录id,用作用户时则为用户的id
+
 
     public int getStage() {
         return stage;
@@ -60,12 +62,12 @@ public class PageUtil {
         this.order = order;
     }
 
-    public String getOrdername() {
-        return ordername;
+    public String getSortName() {
+        return sortName;
     }
 
-    public void setOrdername(String ordername) {
-        this.ordername = ordername;
+    public void setSortName(String sortName) {
+        this.sortName = sortName;
     }
 
     public String getSearch() {
@@ -77,5 +79,17 @@ public class PageUtil {
             search = "%" + search + "%";
         }
         this.search = search;
+    }
+
+    @Override
+    public String toString() {
+        return "PageUtil{" +
+                "limit=" + limit +
+                ", offset=" + offset +
+                ", order='" + order + '\'' +
+                ", sortName='" + sortName + '\'' +
+                ", search='" + search + '\'' +
+                ", stage=" + stage +
+                '}';
     }
 }

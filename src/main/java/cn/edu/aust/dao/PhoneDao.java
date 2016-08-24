@@ -36,6 +36,8 @@ public class PhoneDao {
      * @return
      */
     public List<Phone> showallphonesummary(PageUtil pageUtil) {
+        logger.debug("--------PhoneDAO-----------  " + pageUtil.toString());
+
         return sqlSessionTemplate.selectList("phoneinfoMapper.showallphonesummary", pageUtil);
     }
 

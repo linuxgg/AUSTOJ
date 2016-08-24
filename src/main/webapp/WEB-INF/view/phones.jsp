@@ -26,12 +26,16 @@
 
     <h4 class="text-center"> Show the details of phones</h4>
     <section class="animated fadeInLeft">
-        <table class="table-bordered " width="100%" data-toggle="table" id="phonesummary-table">
+        <table class="table-bordered " width="100%" data-toggle="table" id="phonesummary-table"
+               data-query-params-type="limit">
+
             <thead>
             <tr>
-                <th class="col-xs-1" data-sortable="true" data-field="id">ID</th>
+                <th class="col-xs-1" data-sortable="true" data-field="id" data-align="center">ID</th>
                 <th class="col-xs-2" data-sortable="true" data-field="brand">brand</th>
-                <th class="col-xs-5" data-sortable="true" data-formatter="addlinktomodel" data-field="model">model</th>
+                <th class="col-xs-5" data-sortable="true" data-sort-name="model" data-formatter="addlinktomodel"
+                    data-field="model">model
+                </th>
                 <th class="col-xs-2" data-sortable="true" data-field="os">os</th>
                 <th class="col-xs-2" data-sortable="true" data-field="zoomsuppported" data-align="center">
                     zoomsuppported
