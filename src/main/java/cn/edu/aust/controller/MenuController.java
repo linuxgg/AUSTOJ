@@ -46,8 +46,13 @@ public class MenuController {
     }
 
     @RequestMapping(value = "/phones/phonesummary", method = RequestMethod.GET)
-    public String toPhoneDetail() {
+    public String toPhoneSummary() {
         return "phones";
+    }
+
+    @RequestMapping(value = "/phones/phonedetails/id", method = RequestMethod.GET)
+    public String toPhoneDetail() {
+        return "phonesdetail";
     }
 
 
