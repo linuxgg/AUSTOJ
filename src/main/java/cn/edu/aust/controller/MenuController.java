@@ -50,7 +50,7 @@ public class MenuController {
         return "phones";
     }
 
-    @RequestMapping(value = "/phones/phonedetails/id", method = RequestMethod.GET)
+    @RequestMapping(value = "/phones/phonedetails", method = RequestMethod.GET)
     public String toPhoneDetail() {
         return "phonesdetail";
     }

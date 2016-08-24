@@ -26,14 +26,13 @@
 
     <h4 class="text-center"> Summary of phones</h4>
     <section class="animated fadeInLeft">
-        <table class="table-bordered " width="100%" data-toggle="table" id="phonesummary-table"
-               data-query-params-type="limit">
+        <table class="table-bordered " width="100%" data-toggle="table" id="phonesummary-table">
 
             <thead>
             <tr>
                 <th class="col-xs-1" data-sortable="true" data-field="id" data-align="center">ID</th>
                 <th class="col-xs-2" data-sortable="true" data-field="brand">brand</th>
-                <th class="col-xs-5" data-sortable="true" data-sort-name="model" data-formatter="addlinktomodel"
+                <th class="col-xs-2" data-sortable="true" data-formatter="addlinktomodel"
                     data-field="model">model
                 </th>
                 <th class="col-xs-2" data-sortable="true" data-field="os">os</th>
@@ -46,7 +45,9 @@
                 <th class="col-xs-2" data-sortable="true" data-field="focusmode" data-align="center">focusmode</th>
                 <th class="col-xs-2" data-field="flashmode" data-align="center">flashmode</th>
                 <th class="col-xs-2" data-field="previewsize" data-align="center">previewsize</th>
-                <th class="col-xs-2" data-field="details" data-align="center">details</th>
+                <th class="col-xs-2" data-formatter="phonedetailformater" data-align="center">
+                    Details
+                </th>
                 <%--<th class="col-xs-2" data-field="details" data-align="center">details</th>--%>
             </tr>
             </thead>

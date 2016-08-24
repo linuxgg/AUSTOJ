@@ -117,7 +117,13 @@ $("#submit-table").bootstrapTable({
 
 });
 
-
+function phonedetailformater(value, row, index) {
+    return [
+        '<div>',
+        '<a href="/phones/phonedetails/' + row.id + '" target="_blank"> MORE </a>',
+        '</div>'
+    ].join('');
+}
 //左边是从PageUtil来，右面是从bootstrap来
 function queryParams(params) {
     return {

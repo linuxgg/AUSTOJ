@@ -24,7 +24,7 @@
 <div class="col-xs-12">
     <!--主面板-->
 
-    <h4 class="text-center"> Summary of phones</h4>
+    <h4 class="text-center"> Details of phones</h4>
     <section class="animated fadeInLeft">
         <table class="table-bordered " width="100%" data-toggle="table" id="phonesummary-table"
                data-query-params-type="limit">
