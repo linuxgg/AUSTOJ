@@ -127,7 +127,7 @@ function queryParams(params) {
         limit: params.limit,
         offset: params.offset,
         order: params.order,
-        ordername: params.sort,
+        sortName: params.sortName,
         search: params.search
     };
 }

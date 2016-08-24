@@ -20,7 +20,17 @@
     <select id="showallphonesummary" parameterType="cn.edu.aust.util.PageUtil"
             resultType="cn.edu.aust.entity.Phone">
         <include refid="query_phone_summary"/>
-
+        WHERE
+        <if test="stage == 0">
+            1=1
+        </if>
+        <if test="stage != 0">
+            1=1
+        </if>
+        <if test="search != null">
+            and (p.model LIKE #{search} or p.brand LIKE #{search} )
+        </if>
+        ORDER BY p.id ${order}
     </select>
 
     <!--查询详细信息-->

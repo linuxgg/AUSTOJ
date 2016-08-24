@@ -7,6 +7,7 @@ public class PageUtil {
 
 //    from table-demo.js
 /*    function queryParams(params) {  -> xxxMapper.xml 去控制查询的内容
+
         return {
                 limit: params.limit,
                 offset: params.offset,
@@ -15,6 +16,10 @@ public class PageUtil {
                 search: params.search
         };
     }*/
+
+//    from mapper
+//    <select id="showallphonesummary" parameterType="cn.edu.aust.util.PageUtil"  传递的是这个PageUtil
+//    resultType="cn.edu.aust.entity.Phone">
 
     private int limit = 20;
     private int offset = 1;
