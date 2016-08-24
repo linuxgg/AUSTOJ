@@ -33,35 +33,41 @@ public class PhoneInfoController {
      *
      * @return
      */
-    @RequestMapping(value = "/phonedetails/{id}", method = RequestMethod.GET)
-//    public
-//    @ResponseBody
-//    Map<String, Object> showallphonedetails(@RequestBody PageUtil pageUtil,@PathVariable("id") int id) throws Exception {
-//        Map<String, Object> maps = new HashMap<>();
-//        PageHelper.startPage(pageUtil.getOffset() / pageUtil.getLimit() + 1, pageUtil.getLimit());
-//        List<Phone> lists = phoneInfoService.showallphonedetails(pageUtil);
-//        PageInfo<Phone> info = new PageInfo<>(lists);
-//        maps.put("total", info.getTotal());
-//        maps.put("rows", lists);
-//        return maps;
-//    }e
-    public ModelAndView showallphonedetails(@PathVariable("id") int id) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    Map<String, Object> showallphonedetails(@RequestBody PageUtil pageUtil, @PathVariable("id") int id) throws Exception {
 
         logger.debug("++++++ showallphonedetails +++++++" + id);
-        ModelAndView model = new ModelAndView();
-        model.setViewName("article");
-        if (id <= 0) {
-            model.addObject("error", "该文章不存在");
-        } else {
-            Phone phone = phoneInfoService.findArticleById(id);
-            if (phone != null) {
-                model.addObject("phone", phone);
-            } else {
-                model.addObject("error", "error");
-            }
-        }
-        return model;
+
+        Map<String, Object> maps = new HashMap<>();
+        PageHelper.startPage(pageUtil.getOffset() / pageUtil.getLimit() + 1, pageUtil.getLimit());
+        List<Phone> lists = phoneInfoService.findArticleById(id);
+        PageInfo<Phone> info = new PageInfo<>(lists);
+        maps.put("total", info.getTotal());
+        maps.put("rows", lists);
+        return maps;
     }
+
+//    public ModelAndView showallphonedetails(@PathVariable("id") int id) {
+//
+//        logger.debug("++++++ showallphonedetails +++++++" + id);
+//        ModelAndView model = new ModelAndView();
+//        model.setViewName("phonedetails");
+//        if (id <= 0) {
+//            model.addObject("error", "该文章不存在");
+//        } else {
+//            Phone phone = phoneInfoService.findArticleById(id);
+//            if (phone != null) {
+//                model.addObject("phone", phone);
+//            } else {
+//                model.addObject("error", "error");
+//            }
+//        }
+//        return model;
+//    }
+
+
 
     /**
      * 查询出用户排名

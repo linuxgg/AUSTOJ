@@ -20,15 +20,18 @@
 
 <!--通知栏结束-->
 <!--主体开始-->
-
+<%
+    String id = request.getParameter("id");
+%>
 <div class="col-xs-12">
     <!--主面板-->
 
     <h4 class="text-center"> Details of phones</h4>
     <section class="animated fadeInLeft">
         <table class="table-bordered " width="100%" data-toggle="table" id="phonedetail-table"
-               data-query-params-type="limit">
-
+               data-query-params-type="limit" data-card-view="true">
+            <%--<input  value="${phoneid}" id="phoneid">--%>
+            <input type="hidden" value=<%=request.getParameter("id")%> id="phoneid">
             <thead>
             <tr>
                 <th class="col-xs-1" data-sortable="true" data-field="id" data-align="center">ID</th>

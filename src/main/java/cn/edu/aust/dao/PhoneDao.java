@@ -29,8 +29,9 @@ public class PhoneDao {
         return sqlSessionTemplate.selectList("phoneinfoMapper.showallphonedetails", pageUtil);
     }
 
-    public Phone findArticleById(int id) {
-        return sqlSessionTemplate.selectOne("phoneinfoMapper.findArticleById", id);
+    public List<Phone> findArticleById(int id) {
+//        return sqlSessionTemplate.selectOne("phoneinfoMapper.findArticleById", id);
+        return sqlSessionTemplate.selectList("phoneinfoMapper.findArticleById", id);
     }
 
     /**

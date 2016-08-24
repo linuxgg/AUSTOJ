@@ -6,7 +6,8 @@ setTable($("#practice-table"), "/problem/findStageProblem/2");
 setTable($("#master-table"), "/problem/findStageProblem/3");
 
 ////phones
-//setTable($("#phonedetail-table"), "/phone/phonedetails/{id}");
+var phoneid = $("#phoneid").val();
+setTable($("#phonedetail-table"), "/phone/" + phoneid);
 
 //phones
 setTable($("#phonesummary-table"), "/phone/phonesummary");
@@ -40,8 +41,7 @@ function setTable(obj, url) {
 }
 
 
-//
-////手机信息
+////手机详细信息
 //$("#phonedetail-table").bootstrapTable({
 //    url: "/phone/phonedetails",//这里配置请求链接
 //    method: 'post',
@@ -120,7 +120,7 @@ $("#submit-table").bootstrapTable({
 function phonedetailformater(value, row, index) {
     return [
         '<div>',
-        '<a href="/phones/phonedetails/' + row.id + '" target="_blank"> MORE </a>',
+        '<a href="/phones/phonedetails/?id=' + row.id + '" target="_blank"> MORE </a>',
         '</div>'
     ].join('');
 }

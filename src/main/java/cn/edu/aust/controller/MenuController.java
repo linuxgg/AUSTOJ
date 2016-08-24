@@ -1,6 +1,8 @@
 package cn.edu.aust.controller;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class MenuController {
 
+    private Logger logger = Logger.getLogger(MenuController.class);
 
     /**
      * 前往起步页面
@@ -50,10 +53,10 @@ public class MenuController {
         return "phones";
     }
 
-//    @RequestMapping(value = "/phones/phonedetails/{id}", method = RequestMethod.GET)
-//    public String toPhoneDetail() {
-//        return "phonesdetail";
-//    }
+    @RequestMapping(value = "/phones/phonedetails/", method = RequestMethod.GET)
+    public String toPhoneDetail() {
+        return "phonesdetail";
+    }
 
 
     @RequestMapping(value = "/addPhones", method = RequestMethod.POST, produces = "application/json")
