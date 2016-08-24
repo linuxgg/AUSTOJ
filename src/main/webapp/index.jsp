@@ -2,6 +2,6 @@
 <%--<jsp:forward page="/phone/phonedetails"/>--%>
 <%--<jsp:forward page="/index"/>--%>
 <%--<jsp:forward page="/index"/>--%>
-<jsp:forward page="/phones"/>
+<jsp:forward page="/phones/phonesummary"/>
 
 

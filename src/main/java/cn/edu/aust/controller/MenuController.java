@@ -45,10 +45,11 @@ public class MenuController {
         return "rank";
     }
 
-    @RequestMapping(value = "/phones", method = RequestMethod.GET)
+    @RequestMapping(value = "/phones/phonesummary", method = RequestMethod.GET)
     public String toPhoneDetail() {
         return "phones";
     }
+
 
     @RequestMapping(value = "/addPhones", method = RequestMethod.POST, produces = "application/json")
     public String addPhones() {
