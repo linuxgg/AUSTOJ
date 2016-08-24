@@ -35,11 +35,13 @@
             <thead>
             <tr>
                 <th class="col-xs-1" data-sortable="true" data-field="id" data-align="center">ID</th>
-                <th class="col-xs-2" data-sortable="true" data-field="brand">brand</th>
                 <th class="col-xs-5" data-sortable="true" data-sort-name="model" data-formatter="addlinktomodel"
                     data-field="model">model
                 </th>
+                <th class="col-xs-2" data-sortable="true" data-field="brand">brand</th>
                 <th class="col-xs-2" data-sortable="true" data-field="os">os</th>
+                <th class="col-xs-2" data-sortable="true" data-field="imei">imei</th>
+                <th class="col-xs-2" data-sortable="true" data-field="uuid">uuid</th>
                 <th class="col-xs-2" data-sortable="true" data-field="zoomsuppported" data-align="center">
                     zoomsuppported
                 </th>
@@ -50,7 +52,6 @@
                 <th class="col-xs-2" data-field="flashmode" data-align="center">flashmode</th>
                 <th class="col-xs-2" data-field="previewsize" data-align="center">previewsize</th>
                 <th class="col-xs-2" data-field="details" data-align="center">details</th>
-                <%--<th class="col-xs-2" data-field="details" data-align="center">details</th>--%>
             </tr>
             </thead>
             <tbody>
