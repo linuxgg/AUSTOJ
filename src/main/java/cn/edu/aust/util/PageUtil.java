@@ -5,6 +5,17 @@ package cn.edu.aust.util;
  */
 public class PageUtil {
 
+//    from table-demo.js
+/*    function queryParams(params) {  -> xxxMapper.xml 去控制查询的内容
+        return {
+                limit: params.limit,
+                offset: params.offset,
+                order: params.order,
+                ordername: params.sort,
+                search: params.search
+        };
+    }*/
+
     private int limit = 20;
     private int offset = 1;
     private String order = "asc";
@@ -57,8 +68,8 @@ public class PageUtil {
     }
 
     public void setSearch(String search) {
-        if (search != null){
-            search = "%"+search+"%";
+        if (search != null) {
+            search = "%" + search + "%";
         }
         this.search = search;
     }

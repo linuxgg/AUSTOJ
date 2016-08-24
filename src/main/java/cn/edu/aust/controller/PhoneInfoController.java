@@ -1,9 +1,7 @@
 package cn.edu.aust.controller;
 
-import cn.edu.aust.entity.PhoneDetail;
-import cn.edu.aust.entity.Problem;
-import cn.edu.aust.entity.User;
-import cn.edu.aust.service.PhoneDetailService;
+import cn.edu.aust.entity.Phone;
+import cn.edu.aust.service.PhoneInfoService;
 import cn.edu.aust.util.PageUtil;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -12,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,12 +19,12 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping(value = "/phone")
-public class PhoneDetailController {
+public class PhoneInfoController {
 
-    private Logger logger = Logger.getLogger(PhoneDetailController.class);
+    private Logger logger = Logger.getLogger(PhoneInfoController.class);
 
-    @Resource(name = "phoneDetailService")
-    private PhoneDetailService phoneDetailService;
+    @Resource(name = "phoneInfoService")
+    private PhoneInfoService phoneInfoService;
 
     /**
      * 查询出用户排名
@@ -39,11 +36,29 @@ public class PhoneDetailController {
     public
     @ResponseBody
     Map<String, Object> showallphonedetailsP(@RequestBody PageUtil pageUtil) throws Exception {
-        logger.debug("start in PhoneDetailController showallphonedetails");
         Map<String, Object> maps = new HashMap<>();
         PageHelper.startPage(pageUtil.getOffset() / pageUtil.getLimit() + 1, pageUtil.getLimit());
-        List<PhoneDetail> lists = phoneDetailService.showallphonedetails(pageUtil);
-        PageInfo<PhoneDetail> info = new PageInfo<>(lists);
+        List<Phone> lists = phoneInfoService.showallphonesummary(pageUtil);
+        PageInfo<Phone> info = new PageInfo<>(lists);
+        maps.put("total", info.getTotal());
+        maps.put("rows", lists);
+        return maps;
+    }
+
+    /**
+     * 查询出用户排名
+     *
+     * @param pageUtil
+     * @return
+     */
+    @RequestMapping(value = "/phonesummary", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    Map<String, Object> showallphonesummary(@RequestBody PageUtil pageUtil) throws Exception {
+        Map<String, Object> maps = new HashMap<>();
+        PageHelper.startPage(pageUtil.getOffset() / pageUtil.getLimit() + 1, pageUtil.getLimit());
+        List<Phone> lists = phoneInfoService.showallphonesummary(pageUtil);
+        PageInfo<Phone> info = new PageInfo<>(lists);
         maps.put("total", info.getTotal());
         maps.put("rows", lists);
         return maps;
@@ -53,8 +68,8 @@ public class PhoneDetailController {
 //    @RequestMapping(value = "/addPhones", method = RequestMethod.POST)
     public
     @ResponseBody
-    Object addPhones(@RequestBody PhoneDetail phoneDetail) throws Exception {
-        return phoneDetailService.addPhones(phoneDetail);
+    Object addPhones(@RequestBody Phone phone) throws Exception {
+        return phoneInfoService.addPhones(phone);
     }
 
 

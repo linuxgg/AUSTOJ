@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="phoneinfoMapper">
+    <!--启用二级缓存-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+
+    <!--  sql 整理-->
+    <!--sql片段查询显示列表的字段-->
+    <sql id="query_phone_summary">
+        SELECT p.id,p.model, p.brand,p.os,  p.zoomsuppported, p.videostabilization, p.focusmode, p.flashmode, p.previewsize
+        FROM phonedetails p
+    </sql>
+    <sql id="query_phone_details">
+        SELECT *
+        FROM phonedetails p
+    </sql>
+
+
+    <!--    查询概要信息-->
+    <select id="showallphonesummary" parameterType="cn.edu.aust.util.PageUtil"
+            resultType="cn.edu.aust.entity.Phone">
+        <include refid="query_phone_summary"/>
+
+    </select>
+
+    <!--查询详细信息-->
+    <select id="showallphonedetails" parameterType="cn.edu.aust.util.PageUtil"
+            resultType="cn.edu.aust.entity.Phone">
+        <include refid="query_phone_details"/>
+
+    </select>
+
+
+    <insert id="add_phones" parameterType="cn.edu.aust.entity.Phone">
+        INSERT phonedetails
+        ( model, brand,os, imei, uuid, zoomsuppported, videostabilization, focusmode, flashmode, previewsize, details)
+        VALUES
+        (#{model},#{brand},#{os},#{imei},#{uuid},#{zoomsuppported},#{videostabilization},#{focusmode},#{flashmode},#{previewsize},#{details})
+    </insert>
+
+</mapper>

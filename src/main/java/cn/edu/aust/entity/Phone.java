@@ -4,7 +4,7 @@ package cn.edu.aust.entity;
 import java.io.Serializable;
 
 
-public class PhoneDetail implements Serializable {
+public class Phone implements Serializable {
 
 
     private static final long serialVersionUID = 1185246134083540727L;
@@ -124,7 +124,7 @@ public class PhoneDetail implements Serializable {
 
     @Override
     public String toString() {
-        return "PhoneDetail{" +
+        return "Phone{" +
                 "id=" + id +
                 ", model='" + model + '\'' +
                 ", brand='" + brand + '\'' +
