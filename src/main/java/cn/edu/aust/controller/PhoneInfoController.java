@@ -35,7 +35,7 @@ public class PhoneInfoController {
     @RequestMapping(value = "/phonedetails", method = RequestMethod.POST)
     public
     @ResponseBody
-    Map<String, Object> showallphonedetailsP(@RequestBody PageUtil pageUtil) throws Exception {
+    Map<String, Object> showallphonedetails(@RequestBody PageUtil pageUtil) throws Exception {
         Map<String, Object> maps = new HashMap<>();
         PageHelper.startPage(pageUtil.getOffset() / pageUtil.getLimit() + 1, pageUtil.getLimit());
         List<Phone> lists = phoneInfoService.showallphonedetails(pageUtil);
@@ -64,6 +64,7 @@ public class PhoneInfoController {
         maps.put("rows", lists);
         return maps;
     }
+
 
     @RequestMapping(value = "/addPhones", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 //    @RequestMapping(value = "/addPhones", method = RequestMethod.POST)
