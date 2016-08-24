@@ -5,8 +5,8 @@ setTable($("#practice-table"), "/problem/findStageProblem/2");
 //master表格数据获取
 setTable($("#master-table"), "/problem/findStageProblem/3");
 
-//phones
-setTable($("#phonedetail-table"), "/phone/phonedetails");
+////phones
+//setTable($("#phonedetail-table"), "/phone/phonedetails/{id}");
 
 //phones
 setTable($("#phonesummary-table"), "/phone/phonesummary");

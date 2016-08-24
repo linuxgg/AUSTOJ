@@ -29,6 +29,10 @@ public class PhoneDao {
         return sqlSessionTemplate.selectList("phoneinfoMapper.showallphonedetails", pageUtil);
     }
 
+    public Phone findArticleById(int id) {
+        return sqlSessionTemplate.selectOne("phoneinfoMapper.findArticleById", id);
+    }
+
     /**
      * 得到用户排名展示信息
      *

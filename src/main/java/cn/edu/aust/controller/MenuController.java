@@ -50,10 +50,10 @@ public class MenuController {
         return "phones";
     }
 
-    @RequestMapping(value = "/phones/phonedetails", method = RequestMethod.GET)
-    public String toPhoneDetail() {
-        return "phonesdetail";
-    }
+//    @RequestMapping(value = "/phones/phonedetails/{id}", method = RequestMethod.GET)
+//    public String toPhoneDetail() {
+//        return "phonesdetail";
+//    }
 
 
     @RequestMapping(value = "/addPhones", method = RequestMethod.POST, produces = "application/json")

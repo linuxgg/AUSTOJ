@@ -26,7 +26,7 @@
 
     <h4 class="text-center"> Details of phones</h4>
     <section class="animated fadeInLeft">
-        <table class="table-bordered " width="100%" data-toggle="table" id="phonesummary-table"
+        <table class="table-bordered " width="100%" data-toggle="table" id="phonedetail-table"
                data-query-params-type="limit">
 
             <thead>

@@ -1,5 +1,6 @@
 package cn.edu.aust.controller;
 
+import cn.edu.aust.entity.Article;
 import cn.edu.aust.entity.Phone;
 import cn.edu.aust.service.PhoneInfoService;
 import cn.edu.aust.util.PageUtil;
@@ -8,6 +9,7 @@ import com.github.pagehelper.PageInfo;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -29,20 +31,36 @@ public class PhoneInfoController {
     /**
      * 查询出用户排名
      *
-     * @param pageUtil
      * @return
      */
-    @RequestMapping(value = "/phonedetails", method = RequestMethod.POST)
-    public
-    @ResponseBody
-    Map<String, Object> showallphonedetails(@RequestBody PageUtil pageUtil) throws Exception {
-        Map<String, Object> maps = new HashMap<>();
-        PageHelper.startPage(pageUtil.getOffset() / pageUtil.getLimit() + 1, pageUtil.getLimit());
-        List<Phone> lists = phoneInfoService.showallphonedetails(pageUtil);
-        PageInfo<Phone> info = new PageInfo<>(lists);
-        maps.put("total", info.getTotal());
-        maps.put("rows", lists);
-        return maps;
+    @RequestMapping(value = "/phonedetails/{id}", method = RequestMethod.GET)
+//    public
+//    @ResponseBody
+//    Map<String, Object> showallphonedetails(@RequestBody PageUtil pageUtil,@PathVariable("id") int id) throws Exception {
+//        Map<String, Object> maps = new HashMap<>();
+//        PageHelper.startPage(pageUtil.getOffset() / pageUtil.getLimit() + 1, pageUtil.getLimit());
+//        List<Phone> lists = phoneInfoService.showallphonedetails(pageUtil);
+//        PageInfo<Phone> info = new PageInfo<>(lists);
+//        maps.put("total", info.getTotal());
+//        maps.put("rows", lists);
+//        return maps;
+//    }e
+    public ModelAndView showallphonedetails(@PathVariable("id") int id) {
+
+        logger.debug("++++++ showallphonedetails +++++++" + id);
+        ModelAndView model = new ModelAndView();
+        model.setViewName("article");
+        if (id <= 0) {
+            model.addObject("error", "该文章不存在");
+        } else {
+            Phone phone = phoneInfoService.findArticleById(id);
+            if (phone != null) {
+                model.addObject("phone", phone);
+            } else {
+                model.addObject("error", "error");
+            }
+        }
+        return model;
     }
 
     /**

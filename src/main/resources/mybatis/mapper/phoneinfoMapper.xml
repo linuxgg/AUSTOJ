@@ -41,10 +41,10 @@
     </select>
 
     <!--查询详细信息-->
-    <select id="showallphonedetails" parameterType="cn.edu.aust.util.PageUtil"
+    <select id="findArticleById" parameterType="int"
             resultType="cn.edu.aust.entity.Phone">
         <include refid="query_phone_details"/>
-
+        WHERE p.id = #{id}
     </select>
 
 

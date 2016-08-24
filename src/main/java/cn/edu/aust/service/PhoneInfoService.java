@@ -42,6 +42,14 @@ public class PhoneInfoService {
     }
 
     /**
+     * @return
+     */
+    public Phone findArticleById(int id) {
+        logger.debug("--------service- findArticleById----------  " + id);
+        return phoneDao.findArticleById(id);
+    }
+
+    /**
      * @param phone
      * @return
      */
