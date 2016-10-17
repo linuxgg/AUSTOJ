@@ -15,7 +15,7 @@
 <body  style="overflow-x: hidden">
     <div class="bg-one" style="height: 100vh">
         <div class="container-fluid text-center animated fadeInDown" style="margin-top: 5%">
-            <h1 class="logo-name">AUST</h1>
+            <h1 class="logo-name">404</h1>
             <c:if test="${error != null}">
                 <h3>${error}</h3>
             </c:if>
@@ -28,7 +28,7 @@
                 <br/>
                 <a href="javascript:void(0);" onClick="history.back(-1);" class="btn btn-primary">
                     <i class="fa fa-backward"></i>&nbsp;&nbsp;上一页</a>
-                <a href="/index" class="btn btn-primary"><i class="fa fa-home"></i>&nbsp;&nbsp;主页</a>
+                <a href="/phones/phonesummary" class="btn btn-primary"><i class="fa fa-home"></i>&nbsp;&nbsp;主页</a>
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="AUSTOJ:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="austoj.war">
+    <root id="archive" name="phonecollectiondb.war">
       <element id="artifact" artifact-name="AUSTOJ:war exploded" />
     </root>
   </artifact>

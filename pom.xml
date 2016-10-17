@@ -2,10 +2,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.edu.aust</groupId>
-    <artifactId>austoj</artifactId>
+    <artifactId>phonecollectiondb</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>austoj Maven Webapp</name>
+    <name>phonecollectiondb Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
     <!--引用软件版本号-->
@@ -244,7 +244,7 @@
     </dependencies>
 
     <build>
-        <finalName>austoj</finalName>
+        <finalName>phonecollectiondb</finalName>
         <plugins>
             <plugin>
                 <groupId>org.mybatis.generator</groupId>

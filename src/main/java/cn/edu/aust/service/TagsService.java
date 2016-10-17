@@ -27,7 +27,7 @@ public class TagsService{
 
     @Scheduled(fixedRate = 1000*3600*2)
     public void getAlTagsDisk() {
-        // F:\workspace\AUSTOJ\target\austoj\static\json\catelog.json
+        // F:\workspace\phonecollectiondb\target\phonecollectiondb\static\json\catelog.json
         String path = System.getProperty("web.root")+"static"+ File.separator+"json"+File.separator;
         String filename = "tags.json";
         List<Tags> lists = tagsDao.findAsideTags();

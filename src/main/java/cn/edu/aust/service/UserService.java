@@ -110,7 +110,7 @@ public class UserService implements InitializingBean{
      * 获取首页展示用户信息放入指定路径
      */
     public void getUserToShowDisk() throws Exception {
-        // F:\workspace\AUSTOJ\target\austoj\static\json\catelog.json
+        // F:\workspace\phonecollectiondb\target\phonecollectiondb\static\json\catelog.json
         String path = System.getProperty("web.root")+"static"+ File.separator+"json"+File.separator;
         String filename = "user.json";
         List<User> lists = userDao.findUserToShow();

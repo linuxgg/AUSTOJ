@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="AUSTOJ:war exploded">
-    <output-path>$PROJECT_DIR$/target/austoj</output-path>
+    <output-path>$PROJECT_DIR$/target/phonecollectiondb</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -53,7 +53,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/austoj/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/phonecollectiondb/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="AUSTOJ/web/Web" />
     </root>
